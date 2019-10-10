@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/css/list.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
     <title>Listado de estudiantes</title>
 </head>
 <body>
@@ -27,6 +27,7 @@
                 <td>
                     <a href="/actualizar/${estudiante?index}/" class="button">Editar</a>
                     <a href="/eliminar/${estudiante?index}/" class="button">Eliminar</a>
+                    <a href="/vista/${estudiante?index}/" class="button">Ver</a>
                 </td>
             </tr>
         </#list>

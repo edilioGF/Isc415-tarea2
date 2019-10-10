@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Registrar Estudiante</title>
+    <link href="/css/main.css" rel="stylesheet">
 </head>
 <body>
 <h1>Ingrese los datos del estudiante:</h1>
@@ -22,8 +23,9 @@
     <h2>Direccion:</h2>
     <input name="direccion" type="text"/><br/>
 
-<button name="Enviar" type="submit">Registrar</button>
-
+    <button type="submit">Registrar</button>
+    <button onclick="location.href = '/';" type="button">Inicio</button>
 </form>
+
 </body>
 </html>

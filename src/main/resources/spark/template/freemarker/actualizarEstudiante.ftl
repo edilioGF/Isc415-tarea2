@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Actualizar datos de Estudiante</title>
+    <link href="/css/main.css" rel="stylesheet">
 </head>
 <body>
 <h1>Ingrese los datos del estudiante:</h1>
@@ -25,6 +26,7 @@
     <input name="index" type="hidden" value="${index}"/>
 
     <button name="Enviar" type="submit">Actualizar</button>
+    <button onclick="location.href = '/';" type="button">Inicio</button>
 
 </form>
 </body>

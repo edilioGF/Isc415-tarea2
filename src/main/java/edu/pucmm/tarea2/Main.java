@@ -24,10 +24,6 @@ public class Main {
             Map<String,Object> datos = new HashMap<>();
             datos.put("estudiantes",estudiantes);
 
-            Estudiante estudiante = new Estudiante("20160522","edilio","garcia","8095815555", "Santiago");
-
-            Controladora.getInstance().getEstudiantes().add(estudiante);
-
             return new FreeMarkerEngine().render(new ModelAndView(datos,"list.ftl"));
         });
 
@@ -43,6 +39,15 @@ public class Main {
             attributes.put("index", index);
 
             return new FreeMarkerEngine().render(new ModelAndView(attributes, "actualizarEstudiante.ftl"));
+        });
+
+        get("/vista/:index/",(request, response) -> {
+            int index = Integer.parseInt(request.params("index"));
+            Map<String,Object> attributes = new HashMap<>();
+            Estudiante estudiante = Controladora.getInstance().getEstudiantes().get(index);
+            attributes.put("estudiante", estudiante);
+            attributes.put("index", index);
+            return new FreeMarkerEngine().render(new ModelAndView(attributes, "visualizarEstudiante.ftl"));
         });
 
         post("/registrarEstudiante/", (request, response) -> {
@@ -78,8 +83,10 @@ public class Main {
 
             Controladora.getInstance().getEstudiantes().set(index,estudiante);
 
-            response.redirect("/");
-            return "";
+            Map<String,Object> attributes = new HashMap<>();
+            attributes.put("estudiante", estudiante);
+            attributes.put("index", index);
+            return new FreeMarkerEngine().render(new ModelAndView(attributes, "visualizarEstudiante.ftl"));
         });
 
         get("/eliminar/:index/", (request, response) -> {
