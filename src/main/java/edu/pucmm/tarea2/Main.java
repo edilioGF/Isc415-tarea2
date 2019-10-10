@@ -82,11 +82,9 @@ public class Main {
             return "";
         });
 
-        post("/delete/", (request, response) -> {
-            ArrayList<Estudiante> estudiantes = Controladora.getInstance().getEstudiantes();
-            int pos = Integer.parseInt(request.queryParams("pos"));
-            estudiantes.remove(pos);
-            Controladora.getInstance().setEstudiantes(estudiantes);
+        get("/eliminar/:index/", (request, response) -> {
+            int index = Integer.parseInt(request.params("index"));
+            Controladora.getInstance().getEstudiantes().remove(index);
             response.redirect("/");
             return "";
         });

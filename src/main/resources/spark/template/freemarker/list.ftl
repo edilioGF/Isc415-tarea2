@@ -26,7 +26,7 @@
                 <td>${estudiante.direccion}</td>
                 <td>
                     <a href="/actualizar/${estudiante?index}/" class="button">Editar</a>
-                    <a href="http://google.com" class="button">Eliminar</a>
+                    <a href="/eliminar/${estudiante?index}/" class="button">Eliminar</a>
                 </td>
             </tr>
         </#list>
