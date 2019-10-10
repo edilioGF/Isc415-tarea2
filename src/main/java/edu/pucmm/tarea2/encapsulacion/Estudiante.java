@@ -5,12 +5,14 @@ public class Estudiante {
     private String nombre;
     private String apellido;
     private String telefono;
+    private String direccion;
 
-    public Estudiante(String matricula, String nombre, String apellido, String telefono) {
+    public Estudiante(String matricula, String nombre, String apellido, String telefono, String direccion) {
         this.matricula = matricula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
+        this.direccion = direccion;
     }
 
     public String getMatricula() {
@@ -44,4 +46,8 @@ public class Estudiante {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    public String getDireccion() { return direccion; }
+
+    public void setDireccion(String direccion) { this.direccion = direccion; }
 }

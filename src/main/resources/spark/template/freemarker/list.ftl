@@ -15,6 +15,7 @@
             <th>Matricula</th>
             <th>Nombre</th>
             <th>Telefono</th>
+            <th>Direccion</th>
             <th>Acciones</th>
         </tr>
         <#list estudiantes as estudiante>
@@ -22,8 +23,9 @@
                 <td>${estudiante.matricula}</td>
                 <td>${estudiante.nombre} ${estudiante.apellido}</td>
                 <td>${estudiante.telefono}</td>
+                <td>${estudiante.direccion}</td>
                 <td>
-                    <a href="http://google.com" class="button">Editar</a>
+                    <a href="/actualizar/${estudiante?index}/" class="button">Editar</a>
                     <a href="http://google.com" class="button">Eliminar</a>
                 </td>
             </tr>

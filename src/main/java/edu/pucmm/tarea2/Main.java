@@ -24,7 +24,7 @@ public class Main {
             Map<String,Object> datos = new HashMap<>();
             datos.put("estudiantes",estudiantes);
 
-            Estudiante estudiante = new Estudiante("20160522","edilio","garcia","8095815555");
+            Estudiante estudiante = new Estudiante("20160522","edilio","garcia","8095815555", "Santiago");
 
             Controladora.getInstance().getEstudiantes().add(estudiante);
 
@@ -35,15 +35,49 @@ public class Main {
             return new FreeMarkerEngine().render(new ModelAndView(null,"registrarEstudiante.ftl"));
         });
 
+        get("/actualizar/:index/", (request, response) -> {
+            int index = Integer.parseInt(request.params("index"));
+            Map<String,Object> attributes = new HashMap<>();
+            Estudiante estudiante = Controladora.getInstance().getEstudiantes().get(index);
+            attributes.put("estudiante", estudiante);
+            attributes.put("index", index);
+
+            return new FreeMarkerEngine().render(new ModelAndView(attributes, "actualizarEstudiante.ftl"));
+        });
+
         post("/registrarEstudiante/", (request, response) -> {
             String nombre = request.queryParams("nombre");
             String apellido = request.queryParams("apellido");
             String telefono = request.queryParams("telefono");
             String matricula = request.queryParams("matricula");
+            String direccion = request.queryParams("direccion");
 
-            Estudiante estudiante = new Estudiante(matricula,nombre,apellido,telefono);
+            Estudiante estudiante = new Estudiante(matricula,nombre,apellido,telefono,direccion);
 
             Controladora.getInstance().getEstudiantes().add(estudiante);
+            response.redirect("/");
+            return "";
+        });
+
+        post("/actualizarEstudiante/",(request, response) -> {
+            String nombre = request.queryParams("nombre");
+            String apellido = request.queryParams("apellido");
+            String telefono = request.queryParams("telefono");
+            String matricula = request.queryParams("matricula");
+            String direccion = request.queryParams("direccion");
+
+            int index = Integer.parseInt(request.queryParams("index"));
+
+            Estudiante estudiante = Controladora.getInstance().getEstudiantes().get(index);
+
+            estudiante.setNombre(nombre);
+            estudiante.setApellido(apellido);
+            estudiante.setTelefono(telefono);
+            estudiante.setMatricula(matricula);
+            estudiante.setDireccion(direccion);
+
+            Controladora.getInstance().getEstudiantes().set(index,estudiante);
+
             response.redirect("/");
             return "";
         });

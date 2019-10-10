@@ -19,6 +19,9 @@
     <h2>Telefono:</h2>
     <input name="telefono" type="text"/><br/>
 
+    <h2>Direccion:</h2>
+    <input name="direccion" type="text"/><br/>
+
 <button name="Enviar" type="submit">Registrar</button>
 
 </form>
