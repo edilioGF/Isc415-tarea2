@@ -2,22 +2,32 @@
 <html>
 <head>
     <title>Perfil del Estudiante</title>
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <script src="/js/bootstrap.js"></script>
 </head>
 <body>
-<h1>Perfil</h1>
+<h1 style="text-align: center;">Perfil de ${estudiante.nombre} ${estudiante.apellido}</h1>
+</br>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-6">
+            <div class="card" style="padding: 20px; background-color: lightgray">
 
-<h2>${estudiante.nombre} ${estudiante.apellido}</h2>
+                <h4>Datos del estudiante:</h4>
 
-<h4>Datos del estudiante:</h4>
+                <p>Matricula: ${estudiante.matricula}</p>
+                <p>Telefono: ${estudiante.telefono}</p>
+                <p>Direccion: ${estudiante.direccion}</p>
 
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <button onclick="location.href = '/actualizar/${index}/';" type="button" class="btn btn-primary" style="margin-top: 10px; margin-right: 5px;">Editar</button>
+        <button onclick="location.href = '/';" type="button" class="btn btn-primary" style="margin-top: 10px;">Inicio</button>
+    </div>
+</div>
 
-<p>Matricula: ${estudiante.matricula}</p>
-<p>Telefono: ${estudiante.telefono}</p>
-<p>Direccion: ${estudiante.direccion}</p>
-
-<a href="/actualizar/${index}/" class="button">Editar</a>
-<a href="/" class="button">Inicio</a>
 
 </body>
 </html>

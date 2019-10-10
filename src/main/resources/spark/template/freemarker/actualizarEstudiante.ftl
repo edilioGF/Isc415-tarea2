@@ -2,32 +2,51 @@
 <html>
 <head>
     <title>Actualizar datos de Estudiante</title>
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <script src="/js/bootstrap.js"></script>
 </head>
 <body>
-<h1>Ingrese los datos del estudiante:</h1>
+<h1 style="text-align: center;">Ingrese los datos del estudiante:</h1>
+</br>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-6">
+            <div class="card" style="padding: 20px; background-color: lightgray">
+                <form action="/actualizarEstudiante/" method="post"  enctype="application/x-www-form-urlencoded">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="${estudiante.nombre}">
+                    </div>
 
-<form action="/actualizarEstudiante/" method="post"  enctype="application/x-www-form-urlencoded">
-    <h2>Nombre:</h2>
-    <input name="nombre" type="text" value="${estudiante.nombre}"/><br/>
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido" value="${estudiante.apellido}">
+                    </div>
 
-    <h2>Apellido:</h2>
-    <input name="apellido" type="text" value="${estudiante.apellido}"/><br/>
+                    <div class="form-group">
+                        <label for="matricula">Matricula:</label>
+                        <input type="text" class="form-control" id="matricula" name="matricula" value="${estudiante.matricula}">
+                    </div>
 
-    <h2>Matricula:</h2>
-    <input name="matricula" type="text" value="${estudiante.matricula}"/><br/>
+                    <div class="form-group">
+                        <label for="telefono">Telefono:</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" value="${estudiante.telefono}">
+                    </div>
 
-    <h2>Telefono:</h2>
-    <input name="telefono" type="text" value="${estudiante.telefono}"/><br/>
+                    <div class="form-group">
+                        <label for="direccion">Direccion:</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion" value="${estudiante.direccion}">
+                    </div>
 
-    <h2>Direccion:</h2>
-    <input name="direccion" type="text" value="${estudiante.direccion}"/><br/>
+                    <input name="index" type="hidden" value="${index}"/>
 
-    <input name="index" type="hidden" value="${index}"/>
+                    <button name="Enviar" type="submit" class="btn btn-primary">Actualizar</button>
+                    <button onclick="location.href = '/';" type="button" class="btn btn-primary">Inicio</button>
 
-    <button name="Enviar" type="submit">Actualizar</button>
-    <button onclick="location.href = '/';" type="button">Inicio</button>
-
-</form>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

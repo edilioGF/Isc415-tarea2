@@ -2,30 +2,48 @@
 <html>
 <head>
     <title>Registrar Estudiante</title>
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <script src="/js/bootstrap.js"></script>
 </head>
 <body>
-<h1>Ingrese los datos del estudiante:</h1>
+<h1 style="text-align: center;">Ingrese los datos del estudiante:</h1>
+</br>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-6">
+            <div class="card" style="padding: 20px; background-color: lightgray">
+                <form action="/registrarEstudiante/" method="post"  enctype="application/x-www-form-urlencoded">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                    </div>
 
-<form action="/registrarEstudiante/" method="post"  enctype="application/x-www-form-urlencoded">
-    <h2>Nombre:</h2>
-    <input name="nombre" type="text"/><br/>
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido">
+                    </div>
 
-    <h2>Apellido:</h2>
-    <input name="apellido" type="text"/><br/>
+                    <div class="form-group">
+                        <label for="matricula">Matricula:</label>
+                        <input type="text" class="form-control" id="matricula" name="matricula">
+                    </div>
 
-    <h2>Matricula:</h2>
-    <input name="matricula" type="text"/><br/>
+                    <div class="form-group">
+                        <label for="telefono">Telefono:</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono">
+                    </div>
 
-    <h2>Telefono:</h2>
-    <input name="telefono" type="text"/><br/>
+                    <div class="form-group">
+                        <label for="direccion">Direccion:</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion">
+                    </div>
 
-    <h2>Direccion:</h2>
-    <input name="direccion" type="text"/><br/>
-
-    <button type="submit">Registrar</button>
-    <button onclick="location.href = '/';" type="button">Inicio</button>
-</form>
-
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                    <button onclick="location.href = '/';" type="button" class="btn btn-primary">Inicio</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

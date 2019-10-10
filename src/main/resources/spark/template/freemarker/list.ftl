@@ -3,40 +3,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <script src="/js/bootstrap.js"></script>
     <title>Listado de estudiantes</title>
 </head>
 <body>
 <h1>Listado de Estudiantes</h1>
-<div>
-    <br/>
-    <table>
-        <tr>
-            <th>Matricula</th>
-            <th>Nombre</th>
-            <th>Telefono</th>
-            <th>Direccion</th>
-            <th>Acciones</th>
-        </tr>
-        <#list estudiantes as estudiante>
-            <tr>
-                <td>${estudiante.matricula}</td>
-                <td>${estudiante.nombre} ${estudiante.apellido}</td>
-                <td>${estudiante.telefono}</td>
-                <td>${estudiante.direccion}</td>
-                <td>
-                    <a href="/actualizar/${estudiante?index}/" class="button">Editar</a>
-                    <a href="/eliminar/${estudiante?index}/" class="button">Eliminar</a>
-                    <a href="/vista/${estudiante?index}/" class="button">Ver</a>
-                </td>
-            </tr>
-        </#list>
-    </table>
-    <br/><br/>
+</br>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-12">
+            <table class="table table-striped">
+                <tr>
+                    <th>Matricula</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Direccion</th>
+                    <th>Acciones</th>
+                </tr>
+                <#list estudiantes as estudiante>
+                    <tr>
+                        <td>${estudiante.matricula}</td>
+                        <td>${estudiante.nombre} ${estudiante.apellido}</td>
+                        <td>${estudiante.telefono}</td>
+                        <td>${estudiante.direccion}</td>
+                        <td>
+                            <a href="/actualizar/${estudiante?index}/">Editar</a>
+                            <a href="/eliminar/${estudiante?index}/">Eliminar</a>
+                            <a href="/vista/${estudiante?index}/">Ver</a>
+                        </td>
+                    </tr>
+                </#list>
+            </table>
+            <br/><br/>
 
-    <form action="/registrar/" method="get">
-        <button type="submit">Registrar Estudiante</button>
-    </form>
+            <form action="/registrar/" method="get">
+                <button type="submit" class="btn btn-primary">Registrar Estudiante</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 </div>
 
