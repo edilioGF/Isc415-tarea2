@@ -1,0 +1,1 @@
+web: sh build/install/Isc415-tarea2/bin/Isc415-tarea2
