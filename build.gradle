@@ -24,6 +24,12 @@ dependencies {
     compile "org.slf4j:slf4j-simple:1.7.21"
 }
 
+shadowJar {
+    baseName = 'Isc415-tarea2'
+    classifier = null
+    version = null
+}
+
 task stage {
-    dependsOn installDist
+    dependsOn shadowJar
 }

@@ -1,1 +1,1 @@
-web: sh build/install/Isc415-tarea2/bin/Isc415-tarea2
+web: java -jar build/libs/Isc415-tarea2.jar
